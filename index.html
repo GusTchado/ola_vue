@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,12 +15,17 @@
 <body>
 
     <div id="app">
-        <saudacao :nome="aluno1"
-            @cumprimentou="registrar"></saudacao>
-        <saudacao :nome="aluno2"
-            @cumprimentou="registrar"></saudacao>
+        <saudacao
+            :nome="aluno1"
+            @cumprimentou="registrar">
+        </saudacao>
 
-        <p>{{recado}}</p>
+        <saudacao
+            :nome="aluno2"
+            @cumprimentou="registrar">
+        </saudacao>
+
+        <p>{{ recado }}</p>
     </div>
 
     <script src="https://unpkg.com/vue@3.2.47/dist/vue.global.js"></script>
@@ -35,31 +41,38 @@
             const Saudacao = {
                 props: ['nome'],
                 emits: ['cumprimentou'],
+
                 template: `
                     <div>
                         <h1 class="titulo-saudacao">
                             Olá, {{ nome }}!
                         </h1>
 
-                        <button @click="$emit('cumprimentou')">]
+                        <button @click="$emit('cumprimentou')">
                             Cumprimentar
                         </button>
                     </div>
                 `
             };
 
-           // Criando a aplicação Vue
+            // Criando a aplicação Vue
             const app = Vue.createApp({
                 setup() {
                     const aluno1 = Vue.ref('Ana');
                     const aluno2 = Vue.ref('Bruno');
 
                     const recado = Vue.ref('Esperando um clique.');
-                return {           
-                    aluno1,
-                    aluno2,
-                    recado,
-                    registrar
+
+                    // Função executada quando um botão é clicado
+                    function registrar() {
+                        recado.value = 'A mensagem chegou.';
+                    }
+
+                    return {
+                        aluno1,
+                        aluno2,
+                        recado,
+                        registrar
                     };
                 }
             });
