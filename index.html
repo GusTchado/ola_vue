@@ -21,13 +21,18 @@
             '<h1>Erro: Vue não foi carregado!</h1>';
         } else {
             const Saudacao = {
-            template: '<h1>Meu primeiro componente</h1>'
+            template: '<h1 class = "titulo-saudacao">Meu primeiro componente</h1>'
         };
         const app = Vue.createApp({});
         app.component('saudacao', Saudacao);
         app.mount('#app');
     }
     </script>
+
+    <style>
+        .titulo-saudacao{
+            color: teal;
+    </style>
 
 </body>
 </html>
