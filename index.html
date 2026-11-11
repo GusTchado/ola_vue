@@ -8,14 +8,20 @@
 <body>
 
     <div id="app">
-        <h1>Meu projeto Vue.js</h1>
-        <p>Preparando nosso primeiro componente!</p>
+       <saudacai></saudacai>
     </div>
 
     <script src="https://unpkg.com/vue@3.2.47/dist/vue.global.js"></script>
 
     <script>
+        const Saudacao = {
+        template: '<h1>Meu primeiro componente</h1>'
+        };
+        // Criando a aplicação Vue
         const app = Vue.createApp({});
+        // Registrando o componente
+        app.component('saudacao', Saudacao);
+        // Iniciando a aplicação
         app.mount('#app');
     </script>
 
