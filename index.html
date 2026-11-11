@@ -64,8 +64,8 @@
                     const recado = Vue.ref('Esperando um clique.');
 
                     // Função executada quando um botão é clicado
-                    function registrar() {
-                        recado.value = nome + 'cumprimentou.';
+                    function registrar(nome) {
+                        recado.value = nome + ' cumprimentou.';
                     }
 
                     return {
