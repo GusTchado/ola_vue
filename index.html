@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercícios Vue.js</title>
 
-     <style>
-        .titulo-saudacao{
+    <style>
+        .titulo-saudacao {
             color: teal;
         }
     </style>
-    
 </head>
 <body>
 
@@ -24,18 +23,29 @@
         // Verificando se o Vue foi carregado
         if (typeof Vue === 'undefined') {
             document.getElementById('app').innerHTML =
-            '<h1>Erro: Vue não foi carregado!</h1>';
+                '<h1>Erro: Vue não foi carregado!</h1>';
         } else {
+
+            // Criando o componente
             const Saudacao = {
                 props: ['nome'],
-                template: `<h1 class = "titulo-saudacao">
-                Olá, {{ nome }}
-                </h1>`
-        };
-        const app = Vue.createApp({});
-        app.component('saudacao', Saudacao);
-        app.mount('#app');
-    }
+
+                template: `
+                    <h1 class="titulo-saudacao">
+                        Olá, {{ nome }}!
+                    </h1>
+                `
+            };
+
+            // Criando a aplicação Vue
+            const app = Vue.createApp({});
+
+            // Registrando o componente
+            app.component('saudacao', Saudacao);
+
+            // Iniciando a aplicação
+            app.mount('#app');
+        }
     </script>
 
 </body>
