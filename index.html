@@ -14,7 +14,7 @@
 <body>
 
     <div id="app">
-        <saudacao nome="Gustavo"></saudacao>
+        <saudacao :nome="anoluno"></saudacao>
     </div>
 
     <script src="https://unpkg.com/vue@3.2.47/dist/vue.global.js"></script>
@@ -38,7 +38,14 @@
             };
 
             // Criando a aplicação Vue
-            const app = Vue.createApp({});
+            const app = Vue.createApp({
+                setup(){
+                    const aluno = vue.ref('Gustavo');
+
+                    return{
+                        aluno
+                    };
+            });
 
             // Registrando o componente
             app.component('saudacao', Saudacao);
