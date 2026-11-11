@@ -48,7 +48,7 @@
                             Olá, {{ nome }}!
                         </h1>
 
-                        <button @click="$emit('cumprimentou')">
+                        <button @click="$emit('cumprimentou', nome)">
                             Cumprimentar
                         </button>
                     </div>
@@ -65,7 +65,7 @@
 
                     // Função executada quando um botão é clicado
                     function registrar() {
-                        recado.value = 'A mensagem chegou.';
+                        recado.value = nome + 'cumprimentou.';
                     }
 
                     return {
