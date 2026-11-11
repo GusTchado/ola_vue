@@ -8,8 +8,7 @@
 <body>
 
     <div id="app">
-        <saudacao></saudacao>
-        <saudacao></saudacao>
+        <saudacao nome="Gustavo"></saudacao>
     </div>
 
     <script src="https://unpkg.com/vue@3.2.47/dist/vue.global.js"></script>
@@ -21,7 +20,9 @@
             '<h1>Erro: Vue não foi carregado!</h1>';
         } else {
             const Saudacao = {
-            template: '<h1 class = "titulo-saudacao">Meu primeiro componente</h1>'
+            template: '<h1 class = "titulo-saudacao">
+                Olá, {{ nome }}
+                </h1>'
         };
         const app = Vue.createApp({});
         app.component('saudacao', Saudacao);
