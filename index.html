@@ -41,13 +41,14 @@
             // Criando a aplicação Vue
             const app = Vue.createApp({
                 setup(){
-                    const aluno1 = vue.ref('Ana');
-                    const aluno2 = vue.ref('Bruno');
+                    const aluno1 = Vue.ref('Ana');
+                    const aluno2 = Vue.ref('Bruno');
 
                     return{
                         aluno1,
                         aluno2
                     };
+                }
             });
 
             // Registrando o componente
