@@ -14,15 +14,18 @@
     <script src="https://unpkg.com/vue@3.2.47/dist/vue.global.js"></script>
 
     <script>
-        const Saudacao = {
-        template: '<h1>Meu primeiro componente</h1>'
+        // Verificando se o Vue foi carregado
+        if (typeof Vue === 'undefined') {
+            document.getElementById('app').innerHTML =
+            '<h1>Erro: Vue não foi carregado!</h1>';
+        } else {
+            const Saudacao = {
+            template: '<h1>Meu primeiro componente</h1>'
         };
-        // Criando a aplicação Vue
         const app = Vue.createApp({});
-        // Registrando o componente
         app.component('saudacao', Saudacao);
-        // Iniciando a aplicação
         app.mount('#app');
+    }
     </script>
 
 </body>
