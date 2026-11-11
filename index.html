@@ -14,7 +14,8 @@
 <body>
 
     <div id="app">
-        <saudacao :nome="anoluno"></saudacao>
+        <saudacao :nome="aluno1"></saudacao>
+        <saudacao :nome="aluno2"></saudacao>
     </div>
 
     <script src="https://unpkg.com/vue@3.2.47/dist/vue.global.js"></script>
@@ -40,10 +41,12 @@
             // Criando a aplicação Vue
             const app = Vue.createApp({
                 setup(){
-                    const aluno = vue.ref('Gustavo');
+                    const aluno = vue.ref('Ana');
+                    const aluno2 = vue.ref('Bruno');
 
                     return{
-                        aluno
+                        aluno1,
+                        aluno2
                     };
             });
 
